@@ -5,7 +5,6 @@ def homePage(request):
     return render(request,"index.html")
 
 def aboutPage(request):
-    return HttpResponse("This is the aboutpage of this website")
-
+    return render(request,"about.html")
 def contactPage(request):
-    return HttpResponse("This is the contactpage of this website")
+    return render(request,"contact.html")
