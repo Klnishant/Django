@@ -1,12 +1,14 @@
 {% extends "layout.html" %}
 
-{% block title %}Chai | Page{% endblock title %}
+
 
 {% block content %}
-    <h1 class="bg-orange-400 text-3xl">
-        This is The Chai Page
-    </h1>
-    <P>
-        ndsfghdbcdvjcdsjcdgvshscbvccc hdfgdsvcsjzxj sdfguyfchdbc 
-    </p>
+    {% for chai in chais %}
+    <div>
+        <img src={{chai.image.url}} alt={{chai.name}}/>
+        <h3>{{chai.name}}</h3>
+        <p>{{chai.description}}</p>
+        <a href={% url 'chaiDetails' chai.id%}>Details</a>
+    </div>
+    {% endfor %}
 {% endblock content %}
